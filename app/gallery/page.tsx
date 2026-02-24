@@ -21,7 +21,8 @@ function getGalleryImages(): { id: string; src: string; title: string; category:
           category: categories[i % categories.length] ?? "Events",
         };
       })
-      .sort((a, b) => a.title.localeCompare(b.title));
+      .sort((a, b) => a.title.localeCompare(b.title))
+      .reverse();
   } catch {
     return [];
   }
