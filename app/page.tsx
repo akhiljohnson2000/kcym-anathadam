@@ -47,7 +47,6 @@ export default function HomePage() {
             className="object-cover object-[center_20%]"
             priority
             sizes="100vw"
-            style={{ width: 'auto !important', height: '100% !important' }}
           />
         </div>
         <div className="absolute inset-0 bg-gradient-sunrise z-[1]" />

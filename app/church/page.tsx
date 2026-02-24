@@ -5,9 +5,31 @@ import { Church, BookOpen, Award } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const vicars = [
-  { name: "Fr. Joseph", years: "1978–1995", contribution: "First parish priest; celebrated first Holy Mass in the region (1973) and led the establishment of the parish." },
-  { name: "Fr. Jose", years: "1995–", contribution: "Led further development initiatives; parish community actively participated in all activities." },
-  { name: "Fr. Stephen", years: "2023–Present", contribution: "Additional spiritual and infrastructural developments; parish continues to grow in faith, unity, and service." },
+  "ഫാ. ഇഗ്നേഷ്യസ് ചിറ്റിലപ്പിള്ളി",
+  "ഫാ. ജോസഫ് പടമാടൻ",
+  "ഫാ. ജെയിംസ് പഴയാറ്റിൽ",
+  "ഫാ. ആന്റണി ആലപ്പാട്ട്",
+  "ഫാ. ജോസഫ് കുണ്ടുകുളം",
+  "ഫാ. വർഗ്ഗീസ് കണ്ണമ്പുഴ",
+  "ഫാ. ഇഗ്നേഷ്യസ് ചിറ്റിലപ്പിള്ളി",
+  "ഫാ. തോമസ് പാറക്കാടൻ",
+  "ഫാ. പോൾ തോമസ് മേക്കാട്ടുതൊടി",
+  "ഫാ. ജെയിംസ് പഴയാറ്റിൽ",
+  "ഫാ. ജോസ് മാണിപറമ്പിൽ",
+  "ഫാ. തോമസ് പുതുശ്ശേരി",
+  "ഫാ. ജോസ് കെ. ചിറ്റിലപ്പിള്ളി",
+  "ഫാ. ലിജു പോൾ പറമ്പത്ത്",
+  "ഫാ. ജോസഫ് കൂട്ടാലപറമ്പിൽ",
+  "ഫാ. വർഗ്ഗീസ് കണ്ണമ്പുഴ",
+  "ഫാ. ആന്റണി കൊളങ്ങര",
+  "ഫാ. റോബി വട്ടോലി",
+  "ഫാ. സെബി കുളങ്ങര",
+  "ഫാ. സണ്ണി വലിയവീട്ടിൽ",
+  "ഫാ. വിനീഷ് വട്ടോലി",
+  "ഫാ. മനോജ് മേക്കാടൻ",
+  "ഫാ. തോമസ് കൂട്ടാല",
+  "ഫാ. ജോസഫ് സണ്ണി മണ്ടകത്ത്",
+  "ഫാ. വർഗ്ഗീസ് അരിക്കാട്ട്",
 ];
 
 const fadeInUp = {
@@ -18,23 +40,17 @@ const fadeInUp = {
   }),
 };
 
-const historyTimeline = [
-  { year: "Early years", text: "The people of this region were mainly engaged in agriculture. The land was fertile, and farming was the primary source of livelihood. However, there were many hardships, including lack of proper roads, educational institutions, and basic facilities. The early settlers struggled to build a stable life here." },
-  { year: "February 28, 1973", text: "Under the leadership of Rev. Fr. Joseph, Holy Mass was first celebrated in a small shed made of simple materials. That marked the beginning of organized spiritual life in this region. Before that, the faithful had to travel long distances to attend Mass and receive sacraments." },
-  { year: "1974", text: "Efforts began to establish a permanent church. The faithful worked together tirelessly, contributing labor and resources. Their unity and determination laid the foundation for the spiritual growth of the community." },
-  { year: "1975", text: "A chapel was constructed, and regular Holy Mass and catechism classes were started. With the growing number of believers, the need for a proper parish became evident." },
-  { year: "July 3, 1978", text: "The church was officially declared a parish. Rev. Fr. Joseph became the first parish priest. This was a historic milestone for the faithful of the region." },
-  { year: "1985", text: "A Lower Primary School was established to provide education to children in the locality. Later, in 1987, the school was upgraded. The church played a key role in promoting moral and academic development among students." },
-  { year: "Following years", text: "Several improvements were made: construction of a new church building; expansion of parish facilities; development of catechism and youth movements; strengthening of faith formation programs." },
-  { year: "1995", text: "Under the leadership of Rev. Fr. Jose, further development initiatives were undertaken. The parish community actively participated in all activities, contributing both financially and through voluntary service." },
-  { year: "1996–1998", text: "Efforts were made to improve school facilities and infrastructure. In 1998, additional development works were carried out, including improvements in parish buildings and community services." },
-  { year: "Early 2000s", text: "Modernization efforts continued. Various organizations within the parish became more active, including youth associations, women's groups, and charitable organizations." },
-  { year: "2009", text: "New construction and renovation works were undertaken to strengthen parish infrastructure. The faithful remained united and cooperative throughout these developments." },
-  { year: "2013–2016", text: "Further expansion activities were carried out in 2013 and 2014. In 2016, significant renovations were completed, ensuring better facilities for worship and parish activities." },
-  { year: "April 22, 2018", text: "Another important milestone was achieved with major improvements to the church structure and surroundings." },
-  { year: "October 28, 2019", text: "New parish initiatives were introduced, focusing on spiritual renewal and community service." },
-  { year: "2023", text: "Under the leadership of Rev. Fr. Stephen, additional spiritual and infrastructural developments were undertaken. The parish continued to grow in faith, unity, and service." },
-  { year: "Today", text: "The parish stands as a testimony to the dedication, sacrifice, and faith of the early pioneers and subsequent generations. The unity among the faithful, the leadership of devoted priests, and the grace of God have transformed this once underdeveloped area into a vibrant and spiritually strong community. The history of this parish is not just about buildings and milestones, but about faith, perseverance, and collective effort. It continues to move forward with hope and commitment to serving God and society." },
+const historyParagraphs = [
+  "തൃശ്ശൂർ ജില്ലയിൽ ഇരിങ്ങാലക്കുട രൂപത അധീനതയിൽ ദൈവാനുഗ്രഹത്താൽ സമ്പന്നമായ ആളൂർ എന്ന പ്രകൃതി രമണീയമായ കൊച്ചുഗ്രാമത്തിന്റെ വടക്കു കിഴക്കു ഭാഗത്ത് പ്രസിദ്ധമായ ആര്യാമ്പാടത്താലും കല്ലൂർ പാടത്താലും ചുറ്റപ്പെട്ട് കൃഷിയെ ആശ്രയിച്ച് ജീവിച്ചിരുന്ന കുറച്ച് ക്രിസ്തീയ വിശ്വാസ കുടുംബങ്ങളുടെ ആധ്യാത്മിക നവോത്ഥാനം ലക്ഷ്യം വെച്ച് 1973 ഫെബ്രുവരി 28-ന് ആളൂർ പള്ളി വികാരിയായിരുന്ന റവ. ഫാ. ഇഗ്നേഷ്യസ് ചിറ്റിലപ്പിള്ളി രണ്ടേക്കർ ഇരുപത്തിയേഴ് സെന്റ് സ്ഥലം വാങ്ങി. ദൈവജനത്തിന്റെ ഉത്സാഹപൂർവ്വകമായ താൽപര്യം കൊണ്ട് അതേ വർഷം തന്നെ ലളിതമായ സൗകര്യത്തോടുകൂടി ഒരു കുരിശുപള്ളി പണിതീർത്ത് ഞായറാഴ്ചകളിലെ കുർബാന ആരംഭിച്ചത് അഭിവന്ദ്യ മാർ ജോസഫ് കുണ്ടുകുളം പിതാവിന്റെ കാർമ്മികത്വത്തിലാണ്. ഏകദേശം 2-3 കിലോമീറ്റർ നടന്നു പള്ളിയിലേക്ക് പോയിരുന്ന വിശ്വാസികൾക്ക് കുരിശുപള്ളി വലിയൊരു ആശ്രയവും അത്താണിയുമായി.",
+  "കുരിശുപള്ളിയുടെ നിർമ്മാണത്തിനുശേഷം ഒരു സെമിത്തേരിക്കുവേണ്ടിയുള്ള നടപടികൾ ആരംഭിച്ചു. 1974-ൽ സെമിത്തേരിക്കുള്ള നിയമാനുവാദം ലഭിക്കുകയും നിർമ്മാണം ആരംഭിക്കുകയും 1975-ൽ പൂർത്തിയായപ്പോൾ പാലക്കാട് രൂപതാ മെത്രാൻ മാർ ജോസഫ് ഇരിമ്പൻ പിതാവ് സെമിത്തേരിയുടെ വെഞ്ചിരിപ്പും പള്ളിക്കുവേണ്ടി ശിലാസ്ഥാപനം നടത്തുകയും ചെയ്തു. ആളൂർ പള്ളിയുടെ ശതാബ്ദിവർഷമായ 1972-ൽ എടുത്ത തീരുമാനത്തിന്റെ സാക്ഷാത്കാരമായിരുന്നു ആനത്തടം പള്ളി. ആളൂർ പള്ളിയുടെ കീഴിൽ പ്രവർത്തിച്ചുകൊണ്ടിരുന്ന കുരിശുപള്ളി നിലനിർത്തിക്കൊണ്ടുതന്നെ ഒരു പുതിയ ദൈവാലയത്തിന് തുടക്കം കുറിച്ചു. ബഹു. ഫാ. ജോസഫ് പടമാടന്റെ നേതൃത്വത്തിൽ ഒരു കമ്മിറ്റി രൂപവൽക്കരിക്കുകയും കുടുംബങ്ങളുടെ കഠിനാദ്ധ്വാന ഫലമായി ദൈവാലയ നിർമ്മാണം ആരംഭിക്കുകയും ചെയ്തു. ഏവരുടെയും പ്രയത്ന ഫലമായി അർദ്ധ വൃത്തകൃതിയിലുള്ള മനോഹരമായ ഒരു ദൈവാലയം നിർമ്മാണം പൂർത്തീകരിക്കുകയും 1978 ജൂലൈ 3-ന് അഭിവന്ദ്യ പിതാവ് മാർ ജോസഫ് കുണ്ടുകുളം വി. തോമസ് ശ്ലീഹായുടെ നാമധേയത്തിലുള്ള പുതിയ ദൈവാലയം ആശീർവദിക്കുകയും ചെയ്തു. പള്ളിയോട് ചേർന്നുതന്നെ ഇടവക മന്ദിരത്തിന്റെയും നിർമ്മാണം പൂർത്തീകരിച്ചു.",
+  "ആളൂർ ഇടവകയുടെ കീഴിൽ തുടർന്ന് ഏഴ് വർഷം കൂടി ഒരു കുരിശുപള്ളിയായി തുടർന്നു. കുടുംബയൂണിറ്റുകൾ, വേദപാഠം, വിവിധ സംഘടനാ പ്രവർത്തനങ്ങൾ എന്നിവയ്ക്കും തുടക്കമായി. ഒരു പുതിയ ഇടവകയെന്ന സ്വപ്നമായിരുന്നു അടുത്ത ഘട്ടം. അതിനായ് അതിർത്തികൾ രൂപതാ കച്ചേരിയിൽനിന്നും ഇടവക തിരിയുന്നതിനുള്ള അഭിവന്ദ്യ പിതാവ് മാർ ജെയിംസ് പഴയാറ്റിലിന്റെ കല്പന ലഭിച്ചു. 1985 ജൂലൈ 7-ാം തീയതി ആനത്തടം കുരിശുപള്ളി സ്വതന്ത്ര ഇടവകയായി ഉയർത്തപ്പെട്ടു. ബഹു. ആന്റണി ആലപ്പാട്ടച്ചന്റെ കാലത്ത് ഇരിങ്ങാലക്കുട രൂപത പ്രഥമ മെത്രാൻ മാർ ജെയിംസ് പഴയാറ്റിൽ പിതാവ് ആനത്തടം സെന്റ് തോമസ് ഇടവകയായി പ്രഖ്യാപിച്ചു. രണ്ട് വർഷങ്ങൾക്കുശേഷം 1987-ൽ ഒരു സ്ഥിര വികാരിയെ ലഭിച്ചു. ഇടവകയുടെ നാനാവിധത്തിലുള്ള പ്രവർത്തന മേഖലകൾ ഊർജ്ജസ്വലമായി. വീണ്ടും ഒരു ചെറിയ കാലയളവിൽ ആളൂർ പള്ളിയുടെ കീഴിൽ നടത്തു ഇടവകയായി പ്രവർത്തിക്കേണ്ടിവന്നു. ആ സമയത്ത് സേവനം ചെയ്ത ബഹു. തോമസ് പാറക്കാടന്റെ നേതൃത്വത്തിൽ 'ക്രോസ് ലാന്റി'ന്റെ ഉടമസ്ഥാവകാശം ഇടവകയ്ക്ക് തീറായി ലഭിക്കുകയുണ്ടായി.",
+  "ആനത്തടം ഇടവകയായി ഉയർത്തപ്പെട്ടതിനുശേഷം ഇടവകയുടെ നാനാവിധത്തിലുള്ള വളർച്ച അത്ഭുതപൂർവ്വമായിരുന്നു. വിവിധ കുടുംബ യൂണിറ്റുകൾ, സംഘടനാ പ്രവർത്തനങ്ങൾ, മതബോധനം തുടങ്ങിയ മേഖലകളിലൂടെ ഇടവക കൂടുതൽ കരുത്താർജ്ജിച്ചു. ഇടവകയുടെ സ്ഥിര വികാരിയച്ചന്മാരുടെ പ്രോത്സാഹനത്താൽ ഇടവക ആധ്യാത്മികമായും ഭൗതികമായും ഏറെ വളർന്നു. 1995-ൽ ബഹു. ജോസ് മാണിപറമ്പിലച്ചന്റെ കാലത്ത് ദാനമായി പള്ളിക്ക് കിട്ടിയ സ്ഥലത്ത് ആളൂർ ജംഗ്ഷനിൽ മാർ തോമസ് ശ്ലീഹായുടെ രൂപത്തിന്റെയും അതിനോട് ചേർന്ന് എട്ട് മുറികളോടുകൂടിയ ഒരു ഷോപ്പിംഗ് കോംപ്ലക്സിന്റെയും നിർമ്മാണം പൂർത്തീകരിച്ചു. ഇടവകയ്ക്ക് സ്വന്തമായി ഷോപ്പിംഗ് കോംപ്ലക്സ്, വി. തോമസ് ശ്ലീഹായുടെ സ്തംഭം, പള്ളിയുടെ മുൻവശത്തുള്ള റോഡ് വികസനം, സെന്റ് ആൻ്റ്സ് കോൺവെന്റിൻ്റെയും സ്കൂളിൻ്റെയും പ്രവർത്തനങ്ങൾ, ഷേൺസ്റ്റാറ്റ് സെമിനാരിയുടെയും കോളജിന്റെയും പ്രവർത്തനങ്ങൾ, പള്ളി ജംഗ്ഷനിൽ വി. തോമാശ്ലീഹായുടെ കപ്പേള, പുതുക്കിയ മതബോധന ഹാൾ എന്നിവ ഇടവക ജനങ്ങളുടെ ഒത്തൊരുമയുടെ കരുത്താർന്ന പ്രകടനങ്ങളായിരുന്നു.",
+  "1998-ൽ പുതിയ വികാരിയായി ചാർജെടുത്ത ബഹു. തോമസ് പുതുശ്ശേരിയച്ചന്റെ നേതൃത്വത്തിൽ പണി പൂർത്തീകരിച്ച മതബോധന ഹാൾ സിൽവർ ജൂബിലി സ്മാരകമായി ഉയർത്തി. ഇടവകയുടെ ആധ്യാത്മിക വളർച്ചയ്ക്ക് മുതൽക്കൂട്ടായി 1996-ൽ ബാംഗ്ലൂർ സെന്റ് ആൻ്റ്സ് സന്യാസി സമൂഹം മഠം സ്ഥാപിക്കുകയും 1998-ൽ നഴ്സറി ക്ലാസുകൾക്ക് തുടക്കം കുറിക്കുകയും നിലവിൽ പ്ലസ് ടു CBSE സിലബസ് സൗകര്യമുള്ള സ്കൂളും സൗകര്യങ്ങളും പൂർത്തീകരിക്കുകയും ചെയ്തു. അതുപോലെ ഇടവകാതിർത്തിയിൽ പ്രവർത്തിക്കുന്ന ഷേൺസ്റ്റാറ്റ് സെമിനാരിയും കോളജും ഉന്നത നിലവാരത്തിൽ പ്രവർത്തിക്കുന്നു. ബഹു. ലിജു പോൾ പറമ്പത്തച്ചന്റെ കാലത്ത് മതസൗഹാർദ്ദം വിളിച്ചോതിയിരുന്ന മനോഹരമായ മണിമാളികയും പണി കഴിപ്പിച്ചു. കാലാകാലങ്ങളിൽ മാറിവന്ന വികാരിയച്ചന്മാരുടെ നേതൃത്വത്തിൽ ഇടവക നാനാവിധത്തിലുള്ള ആധ്യാത്മികവും ഭൗതികവുമായ വളർച്ച നേടിയെടുക്കുകയായിരുന്നു. കുടുംബയൂണിറ്റുകളെ പുനഃക്രമീകരിച്ചും സംഘടനകളെ ശക്തിപ്പെടുത്തിയും രൂപതയിൽതന്നെ ഒരു പ്രധാന പങ്കുവഹിക്കുന്ന ഇടവകയായി ആനത്തടം സെന്റ് തോമസ് ഇടവക വളർന്നു.",
+  "ഇടവകയുടെ സെമിത്തേരിയിലെ കാലപ്പഴക്കം വന്ന കപ്പേള പൊളിക്കുകയും ഒരു പുതിയ കപ്പേള നിർമ്മാണം പൂർത്തീകരിക്കുകയും 35 വർഷത്തിനുശേഷം പുതിയ കപ്പേള 2009 മെയ് 2-ാം തീയതി ബഹു. സെബി കുളങ്ങരയച്ചന്റെ കാലത്ത് ബഹു. ഇരിങ്ങാലക്കുട അഭിവന്ദ്യ പിതാവ് മാർ ജെയിംസ് പഴയാറ്റിൽ ആശീർവദിക്കുകയും ചെയ്തു. തുടർന്നുളള കാലയളവിൽ ഇടവക കുടുംബങ്ങളുടെ വർദ്ധനയും കാലപ്പഴക്കത്താലുള്ള പള്ളിക്കുവന്ന കേടുപാടുകളും മറ്റ് അസൗകര്യങ്ങളും വർദ്ധിച്ചുവന്നതിനാൽ ഇടവക ജനങ്ങളുടെ ഒരേയൊരു സ്വപ്നം ഒരു പുതിയ ദൈവാലയം നിർമ്മിക്കുക എന്നതായിരുന്നു. കാലാകാലങ്ങളിൽ മാറിമാറി വന്ന ബഹു. വികാരിയച്ചന്മാർ ആയതിന്നുള്ള ഒരുക്കങ്ങൾ ആരംഭിക്കുകയും സ്വപ്ന സാക്ഷാത്കാരത്തിനായി പ്രയത്നിക്കുകയും പ്രാർത്ഥിക്കുകയും ചെയ്തു.",
+  "കാലപ്പഴക്കം കൊണ്ടും അസൗകര്യങ്ങൾ കൊണ്ടും നിലവിലുണ്ടായിരുന്ന ദൈവാലയം പുനർനിർമ്മിക്കണമെന്നാഗ്രഹം ഇടവക ജനങ്ങൾക്കുണ്ടായെങ്കിലും അതിനുള്ള സാമ്പത്തിക സ്രോതസ്സ് പര്യാപ്തമായിരുന്നില്ല. ഈ കാലയളവിൽ ആളൂർ 'വരപ്രസാദ നാഥ'യുടെ നാമധേയത്തിൽ ഇടവക സ്ഥാപിതമായപ്പോൾ കുറച്ചധികം കുടുംബങ്ങൾ പുതിയ ഇടവകയിലേക്ക് ചേർക്കപ്പെട്ടു. 2013, 2014 വർഷത്തിൽ വികാരിയായിരുന്ന റവ. ഫാ. വിനീഷ് വട്ടോലിയുടെ നേതൃത്വത്തിൽ ഒരു പുതിയ ദൈവാലയത്തിന്റെ പ്രസക്തിയെക്കുറിച്ച് അഭിപ്രായ സർവ്വേ നടത്തുകയും നിർമ്മാണാവശ്യത്തിനായി ഫണ്ട് സ്വരൂപിക്കുന്നതിന് ഒരു അഡ്‌ഹോക്ക് കമ്മിറ്റിയെ തിരഞ്ഞെടുക്കുകയും ഫണ്ട് ശേഖരണം ആരംഭിക്കുകയും ചെയ്തു. പിന്നീട് പുതിയ വികാരിയായി ചാർജെടുത്ത റവ. ഫാ. മനോജ് മേക്കാടത്തിന്റെ നേതൃത്വത്തിൽ 2016 മെയ് 22-ാം തീയതി ദൈവാലയത്തിന്റെയും ഇടവക കാര്യാലയത്തിന്റെയും ശിലാസ്ഥാപനം നടത്തുകയും നിർമ്മാണ പ്രവർത്തനങ്ങൾ ആരംഭിക്കുകയും ചെയ്തു.",
+  "2018 ഏപ്രിൽ 22-ാം തീയതി അഭിവന്ദ്യ പിതാവ് മാർ പോളി കണ്ണൂക്കാടൻ ഇടവക കാര്യാലയത്തിന്റെ ആശീർവാദ കർമ്മം നിർവ്വഹിച്ചു. തുടർന്ന് എല്ലാ മേഖലകളെയും ഉൾപ്പെടുത്തി വിവിധ കമ്മിറ്റികൾ, ഫണ്ട് ശേഖരണത്തിനായി വിവിധങ്ങളായ പദ്ധതികളുടെ ആസൂത്രണം, നിർമ്മാണ വിദഗ്ധരെ കണ്ടെത്തൽ, അമ്പതു വർഷത്തെയെങ്കിലും ഭാവി കണ്ടുകൊണ്ട് ദീർഘവീക്ഷണത്തോടുകൂടിയുള്ള നിർമ്മാണ പദ്ധതികൾ, സാങ്കേതിക വിദ്യകൾ, കലാരൂപങ്ങൾ, ആധ്യാത്മികത നിറഞ്ഞുതുളുമ്പുന്ന അൾത്താര തുടങ്ങി ഏതൊരു മേഖലയിലെയും പോരായ്മകൾ നികത്തി കൊണ്ടായിരുന്നു പുതിയ ദൈവാലയ നിർമ്മാണം. ഇക്കാലയളവിൽ പള്ളി ഭൂമിയുടെ ചുറ്റുമതിൽ നിർമ്മാണവും പൂർത്തീകരിച്ചു. ഇടവക ജനങ്ങളുടെ കഠിനമായ പരിശ്രമവും ശ്രമദാനങ്ങളും അതിനേക്കാൾ ഉപരിയായി തങ്ങളുടെ വിലയേറിയ സംഭാവ്യവും പള്ളി നിർമ്മാണത്തിനായി സമർപ്പിച്ചു. ഏവരുടെയും കഠിനാധ്വാനത്തിന്റെയും പ്രാർത്ഥനയുടെ ഫലമായി 2019 ഏപ്രിൽ 28-ാം തീയതി ബഹു. ഇരിങ്ങാലക്കുട രൂപത മെത്രാൻ മാർ പോളി കണ്ണൂക്കാടൻ പുതിയ ദൈവാലയത്തിന്റെ കൂദാശകർമ്മവും പ്രതിഷ്ഠയും നിർവ്വഹിച്ചു. ഇരിങ്ങാലക്കുട രൂപതയിലെതന്നെ ഏറെ മാതൃകാപരവും അഭിമാനവുമായ ഈ മനോഹര ദൈവാലയം ഇടവകയ്ക്ക് ഏറെ അഭിമാനം പകരുന്ന ഒന്നായി മാറി. വി. തോമാശ്ലീഹായുടെ മാധ്യസ്ഥത്താൽ പ്രാർത്ഥനാ നിർഭരമായി, ഒരേ മനസ്സോടെ ഇടവക മുന്നേറിക്കൊണ്ടിരിക്കുന്നു.",
+  "2018 കാലത്തെ പ്രളയവും ജി.എസ്.ടി. നിയമ നിർമ്മാണങ്ങളും കടുത്ത സാമ്പത്തിക പ്രാരബ്ധങ്ങളും പുതിയ ദൈവാലയ നിർമ്മാണത്തിന് സാമ്പത്തിക ബാധ്യത വരുത്തിയെങ്കിലും ശക്തമായ ആസൂത്രണങ്ങളിലൂടെയും വിവിധ പദ്ധതികളിലൂടെയും നിയന്ത്രണങ്ങളോടുകൂടിയും പള്ളിയുടെ ബാധ്യതകൾ തീർക്കുവാൻ നേതൃത്വം നൽകിയത് ബഹു. തോമസ് കൂട്ടാലയച്ചനും ഇപ്പോഴത്തെ വികാരി ഫാ. ജോസഫ് സണ്ണി മണ്ടകത്തച്ചനുമാണ്. സുവർണ്ണ ജൂബിലി ഉദ്ഘാടനം 2023 ജനുവരി ഒന്നിന് മാർ സ്റ്റീഫൻ ചിറപ്പണത്ത് (യൂറോപ്പിലെ സീറോ-മലബാർ കത്തോലിക്കാ വിശ്വാസികളുടെ അപ്പസ്തോലിക് അഡ്മിനിസ്ട്രേറ്റർ) നിർവ്വഹിച്ചു. ജൂബിലി നിറവിൽ ആയിരിക്കുന്ന ഈ വർഷംതന്നെ പള്ളി നിർമ്മാണത്തിന്റെ എല്ലാ ബാധ്യതകളും തീർക്കുമെന്ന ദൃഢപ്രതിജ്ഞയിലാണ് ഇടവക സമൂഹം.",
+  "കാലാകാലങ്ങളിൽ പ്രവർത്തനങ്ങൾക്ക് നേതൃത്വം നൽകിയ എല്ലാ വൈദികരെയും സന്യസ്തരെയും കൈക്കാരന്മാരെയും വിവിധ സംഘടനാ പ്രവർത്തകരെയും കുടുംബസമ്മേളന ഭാരവാഹികളെയും ഏകോപിപ്പിച്ച് ഇടവക ജനത്തിന്റെ കൂട്ടായ്മയിൽ ജൂബിലി വർഷത്തിന്റെ നിറവിൽ ആനത്തടം സെന്റ് തോമസ് ഇടവക മുന്നേറുമ്പോൾ ഏവരുടെയും കഠിന പ്രയത്നത്തിന്റെയും പ്രാർത്ഥനയുടെയും ഒത്തൊരുമയുടെയും സ്മാരകമായി ഈ ദൈവാലയം മാറട്ടെ. വിവിധങ്ങളായ പദ്ധതികളിലൂടെ സമാഹരിച്ച അധ്വാനത്തിന്റെ പ്രതിഫലം തലമുറകൾക്ക് പ്രചോദനമാകട്ടെ. ഏവർക്കും അഭിമാനത്തിന്റെയും ആത്മസംതൃപ്തിയുടെയും മകുടമായി തീരട്ടെ. ഏവർക്കും വി. തോമസ് ശ്ലീഹായുടെ മാധ്യസ്ഥത്താൽ അനുഗ്രഹവും സമൃദ്ധിയും സമാധാനവും ഉണ്ടാകട്ടെയെന്ന് ആശംസിക്കുന്നു.",
 ];
 
 export default function ChurchPage() {
@@ -69,52 +85,43 @@ export default function ChurchPage() {
             </TabsList>
 
             <TabsContent value="history" className="mt-6">
-              <div className="max-w-3xl mx-auto relative">
-                <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary/20 -translate-x-1/2" />
-                {historyTimeline.map((item, i) => (
-                  <motion.div
-                    key={item.year}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    variants={fadeInUp}
-                    custom={i}
-                    className={`relative flex items-start gap-6 mb-10 ${
-                      i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                    }`}
-                  >
-                    <div className="absolute left-4 md:left-1/2 w-4 h-4 bg-primary rounded-full -translate-x-1/2 mt-1 z-10 ring-4 ring-background" />
-                    <div
-                      className={`ml-12 md:ml-0 md:w-1/2 ${
-                        i % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"
-                      }`}
+              <div className="max-w-3xl mx-auto">
+                <h2 className="font-heading text-2xl font-bold text-foreground mb-6 text-center">
+                  ഇടവക ചരിത്രം
+                </h2>
+                <div className="space-y-6 font-body text-muted-foreground text-lg leading-relaxed">
+                  {historyParagraphs.map((para, i) => (
+                    <motion.p
+                      key={i}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      variants={fadeInUp}
+                      custom={i}
                     >
-                      <span className="text-primary font-heading font-bold text-lg">{item.year}</span>
-                      <p className="font-body text-muted-foreground text-sm mt-2 leading-relaxed">{item.text}</p>
-                    </div>
-                  </motion.div>
-                ))}
+                      {para}
+                    </motion.p>
+                  ))}
+                </div>
               </div>
             </TabsContent>
 
             <TabsContent value="vicars" className="mt-6">
               <div className="max-w-2xl mx-auto relative">
                 <div className="absolute left-4 md:left-8 top-0 bottom-0 w-0.5 bg-primary/30" />
-                {vicars.map((vicar, i) => (
+                {vicars.map((name, i) => (
                   <motion.div
-                    key={vicar.name}
+                    key={`${name}-${i}`}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
                     variants={fadeInUp}
                     custom={i}
-                    className="relative pl-14 md:pl-20 mb-10"
+                    className="relative pl-14 md:pl-20 mb-6"
                   >
                     <div className="absolute left-4 md:left-8 w-3 h-3 bg-primary rounded-full -translate-x-1/2 mt-2 ring-4 ring-background" />
-                    <div className="glass-card rounded-xl p-6">
-                      <span className="text-primary font-heading font-bold text-sm">{vicar.years}</span>
-                      <h3 className="font-heading text-lg font-semibold text-foreground mt-1">{vicar.name}</h3>
-                      <p className="font-body text-muted-foreground text-sm mt-2">{vicar.contribution}</p>
+                    <div className="glass-card rounded-xl p-4">
+                      <p className="font-body text-foreground font-medium">{name}</p>
                     </div>
                   </motion.div>
                 ))}
