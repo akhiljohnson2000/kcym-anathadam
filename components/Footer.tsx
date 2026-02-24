@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Church, Heart } from "lucide-react";
+import { Church, Heart, Instagram, Facebook, Youtube } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -44,6 +44,38 @@ export default function Footer() {
               <p>St. Thomas Church, Anathadam</p>
               <p>Kerala, India</p>
               <p>kcym.anathadam@email.com</p>
+              <div className="flex flex-wrap gap-3 mt-2">
+                <a
+                  href="https://www.instagram.com/kcym_anathadam/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:text-primary transition-colors"
+                  aria-label="Follow KCYM Anathadam on Instagram"
+                >
+                  <Instagram className="h-4 w-4" />
+                  <span>@kcym_anathadam</span>
+                </a>
+                <a
+                  href="https://www.facebook.com/kcymanathadam"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:text-primary transition-colors"
+                  aria-label="KCYM Anathadam on Facebook"
+                >
+                  <Facebook className="h-4 w-4" />
+                  <span>Facebook</span>
+                </a>
+                <a
+                  href="https://www.youtube.com/@st.thomaschurchanathadam2188"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:text-primary transition-colors"
+                  aria-label="St. Thomas Church Anathadam on YouTube"
+                >
+                  <Youtube className="h-4 w-4" />
+                  <span>YouTube</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>

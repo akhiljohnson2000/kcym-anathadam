@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, Mail, Phone, Facebook, Instagram, Youtube } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 
 export default function ContactPage() {
   return (
@@ -29,65 +29,54 @@ export default function ContactPage() {
             transition={{ duration: 0.6 }}
             className="max-w-2xl mx-auto"
           >
-            <h2 className="font-heading text-2xl font-bold text-foreground mb-6">Contact Information</h2>
-
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <MapPin className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-heading font-semibold text-foreground">Address</h3>
-                  <p className="font-body text-muted-foreground text-sm">St. Thomas Church, Anathadam, Kerala, India</p>
+            <div className="space-y-8">
+              <div>
+                <h3 className="font-heading text-lg font-semibold text-foreground mb-3">Vicar</h3>
+                <div className="flex items-center gap-3">
+                  <Phone className="h-5 w-5 text-primary flex-shrink-0" />
+                  <p className="font-body text-muted-foreground">
+                    Fr. Varghese Arrikat — +91 94475 2xxxx
+                  </p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Mail className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-heading font-semibold text-foreground">Email</h3>
-                  <p className="font-body text-muted-foreground text-sm">kcym.anathadam@email.com</p>
+              <div>
+                <h3 className="font-heading text-lg font-semibold text-foreground mb-3">Church Officials</h3>
+                <div className="flex items-center gap-3">
+                  <Phone className="h-5 w-5 text-primary flex-shrink-0" />
+                  <p className="font-body text-muted-foreground">
+                    Willson Mangalan — +91 90615 1xxxx
+                  </p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Phone className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-heading font-semibold text-foreground">Phone</h3>
-                  <p className="font-body text-muted-foreground text-sm">+91 XXXXX XXXXX</p>
+              <div>
+                <h3 className="font-heading text-lg font-semibold text-foreground mb-3">KCYM Officials</h3>
+                <div className="flex items-center gap-3">
+                  <Phone className="h-5 w-5 text-primary flex-shrink-0" />
+                  <p className="font-body text-muted-foreground">
+                    President — Noel — +91 97456 1xxxx
+                  </p>
                 </div>
               </div>
-            </div>
 
-            <div className="mt-8">
-              <h3 className="font-heading font-semibold text-foreground mb-3">Follow Us</h3>
-              <div className="flex gap-3">
-                {[Facebook, Instagram, Youtube].map((Icon, i) => (
-                  <a
-                    key={i}
-                    href="#"
-                    className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors"
-                  >
-                    <Icon className="h-5 w-5 text-primary" />
-                  </a>
-                ))}
+              <div>
+                <h3 className="font-heading text-lg font-semibold text-foreground mb-3">Unit Officials</h3>
+                <p className="font-body text-muted-foreground">—</p>
               </div>
             </div>
 
-            <div className="mt-8 rounded-xl overflow-hidden border border-border">
+            <div className="mt-12 rounded-xl overflow-hidden border border-border">
               <iframe
-                title="Church Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.0!2d76.3!3d10.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDA!5e0!3m2!1sen!2sin!4v1"
+                title="St. Thomas Church, Anathadam"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.9680861370757!2d76.3003955!3d10.3444369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7f8698b8a47d1%3A0xd6b96e8253b0227a!2sSt.%20Thomas%20Church%2C%20Anathadam!5e0!3m2!1sen!2sin!4v1771908977788!5m2!1sen!2sin"
                 width="100%"
-                height="200"
+                height="450"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
-                className="grayscale hover:grayscale-0 transition-all"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full"
               />
             </div>
           </motion.div>

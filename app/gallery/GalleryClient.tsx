@@ -1,12 +1,8 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Camera, X } from "lucide-react";
-
-const categories = ["All", "Events", "Retreats", "Celebrations", "Outreach"];
-
-const heights = ["h-48", "h-64", "h-56", "h-72", "h-52", "h-60", "h-48", "h-68", "h-56"];
 
 type GalleryItem = {
   id: string;
@@ -16,16 +12,7 @@ type GalleryItem = {
 };
 
 export default function GalleryClient({ images }: { images: GalleryItem[] }) {
-  const [activeCategory, setActiveCategory] = useState("All");
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
-
-  const filtered = useMemo(
-    () =>
-      activeCategory === "All"
-        ? images
-        : images.filter((item) => item.category === activeCategory),
-    [activeCategory, images],
-  );
 
   return (
     <>
@@ -43,57 +30,32 @@ export default function GalleryClient({ images }: { images: GalleryItem[] }) {
         </div>
       </section>
 
-      <section className="py-8 border-b border-border">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-2">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-5 py-2 rounded-full font-body text-sm transition-colors ${
-                  activeCategory === cat
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-muted text-muted-foreground hover:text-primary"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-12">
-        <div className="container mx-auto px-4">
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 max-w-5xl mx-auto">
+      <section className="pb-12">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-0">
             <AnimatePresence mode="popLayout">
-              {filtered.map((item, i) => (
+              {images.map((item, i) => (
                 <motion.div
                   key={item.id}
                   layout
-                  initial={{ opacity: 0, scale: 0.9 }}
+                  initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.3 }}
-                  className="mb-4 break-inside-avoid"
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.25 }}
+                  className="aspect-square overflow-hidden"
                 >
-                  <div
+                  <button
+                    type="button"
                     onClick={() => setSelectedItem(item)}
-                    className={`${heights[i % heights.length]} rounded-xl cursor-pointer hover:shadow-lg transition-shadow flex flex-col overflow-hidden border border-border bg-muted group`}
+                    className="w-full h-full block cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary focus:ring-inset"
                   >
-                    <div className="relative flex-1 min-h-0">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={item.src}
-                        alt={item.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                    <div className="p-3 bg-background/80">
-                      <span className="text-xs font-body text-muted-foreground">{item.category}</span>
-                      <h3 className="font-heading font-semibold text-foreground text-sm mt-0.5">{item.title}</h3>
-                    </div>
-                  </div>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={item.src}
+                      alt=""
+                      className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-300"
+                    />
+                  </button>
                 </motion.div>
               ))}
             </AnimatePresence>
@@ -102,11 +64,6 @@ export default function GalleryClient({ images }: { images: GalleryItem[] }) {
           {images.length === 0 && (
             <p className="text-center font-body text-muted-foreground mt-8 text-sm">
               No images in gallery yet. Add images to <code className="bg-muted px-1 rounded">public/gallery/</code> to see them here.
-            </p>
-          )}
-          {images.length > 0 && (
-            <p className="text-center font-body text-muted-foreground mt-8 text-sm">
-              {images.length} photo{images.length !== 1 ? "s" : ""} from <code className="bg-muted px-1 rounded">public/gallery/</code>. Add more images to the folder to list them here.
             </p>
           )}
         </div>
@@ -138,13 +95,9 @@ export default function GalleryClient({ images }: { images: GalleryItem[] }) {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={selectedItem.src}
-                alt={selectedItem.title}
+                alt=""
                 className="max-h-[80vh] w-auto object-contain rounded-xl shadow-2xl"
               />
-              <div className="mt-4 text-center">
-                <h3 className="font-heading text-xl font-bold text-primary-foreground">{selectedItem.title}</h3>
-                <p className="font-body text-primary-foreground/80 text-sm mt-1">{selectedItem.category}</p>
-              </div>
             </motion.div>
           </motion.div>
         )}

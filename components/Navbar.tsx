@@ -3,16 +3,21 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Church } from "lucide-react";
+import { Menu, X, Church, Instagram, Facebook, Youtube } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { href: "/", label: "Home" },
   { href: "/story", label: "Our Story" },
   { href: "/church", label: "St. Thomas Church" },
   { href: "/initiatives", label: "Initiatives" },
   { href: "/gallery", label: "Gallery" },
   { href: "/contact", label: "Contact" },
+];
+
+const socialLinks = [
+  { href: "https://www.instagram.com/kcym_anathadam/", icon: Instagram, label: "Instagram" },
+  { href: "https://www.facebook.com/kcymanathadam", icon: Facebook, label: "Facebook" },
+  { href: "https://www.youtube.com/@st.thomaschurchanathadam2188", icon: Youtube, label: "YouTube" },
 ];
 
 export default function Navbar() {
@@ -61,6 +66,23 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <div className="ml-2 flex items-center gap-1 border-l border-border pl-3">
+              {socialLinks.map((social) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-md text-muted-foreground hover:text-primary transition-colors"
+                    aria-label={`${social.label}`}
+                  >
+                    <Icon className="h-5 w-5" />
+                  </a>
+                );
+              })}
+            </div>
           </div>
 
           <button
@@ -95,6 +117,23 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
+              <div className="flex gap-2 pt-2 mt-2 border-t border-border">
+                {socialLinks.map((social) => {
+                  const Icon = social.icon;
+                  return (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-3 rounded-md bg-muted text-muted-foreground hover:text-primary transition-colors"
+                      aria-label={social.label}
+                    >
+                      <Icon className="h-5 w-5" />
+                    </a>
+                  );
+                })}
+              </div>
             </div>
           </motion.div>
         )}
