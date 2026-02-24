@@ -1,73 +1,66 @@
-# Welcome to your Lovable project
+# KCYM Anathadam
 
-## Project info
+Website for **KCYM Anathadam** — Kerala Catholic Youth Movement at St. Thomas Church, Anathadam. Faith, Fellowship, Service.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Tech stack
 
-## How can I edit this code?
+- **Next.js 14** (App Router)
+- **React 18** · **TypeScript**
+- **Tailwind CSS** · **shadcn/ui** (Radix UI)
+- **Framer Motion** · **Lucide React** · **next-themes**
 
-There are several ways of editing your application.
+## Getting started
 
-**Use Lovable**
+### Prerequisites
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- Node.js 18+ and npm (or [nvm](https://github.com/nvm-sh/nvm#installing-and-updating))
 
-Changes made via Lovable will be committed automatically to this repo.
+### Run locally
 
-**Use your preferred IDE**
+```bash
+# Install dependencies
+npm install
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Open [http://localhost:3000](http://localhost:3000).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Other scripts
 
-**Use GitHub Codespaces**
+```bash
+npm run build   # Production build
+npm run start   # Start production server (after build)
+npm run lint    # Run ESLint
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Project structure
 
-## What technologies are used for this project?
+- **`app/`** — Next.js App Router: pages (home, story, church, initiatives, gallery, contact), layout, global styles
+- **`components/`** — Layout (Navbar, Footer), BibleQuoteSlider, theme provider, shadcn UI components
+- **`lib/`** — Utilities (e.g. `cn`)
+- **`hooks/`** — React hooks (e.g. toast)
+- **`public/`** — Static assets: hero image, meta logo, gallery images, favicon
 
-This project is built with:
+## Content
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **Home** — Hero, about KCYM, Bible quote slider
+- **Our Story** — Journey timeline, unit members
+- **St. Thomas Church** — Parish history, vicars
+- **Initiatives** — Blood Cell, Digital Magazine, events
+- **Gallery** — Image grid (add images in `public/gallery/`)
+- **Contact** — Vicar, church officials, KCYM officials, unit officials, map embed
 
-## How can I deploy this project?
+Social links (header & footer): Instagram, Facebook, YouTube. Map: St. Thomas Church, Anathadam (Google Maps embed).
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## Deployment
 
-## Can I connect a custom domain to my Lovable project?
+Build and run in production:
 
-Yes, you can!
+```bash
+npm run build
+npm run start
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Or deploy to [Vercel](https://vercel.com) (recommended for Next.js): connect the repo and use the default build settings. Set `NEXT_PUBLIC_SITE_URL` to your production URL for correct meta/OG image URLs.
