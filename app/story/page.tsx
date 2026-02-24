@@ -1,34 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Users, BookOpen } from "lucide-react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { BookOpen } from "lucide-react";
 
-const milestones = [
-  { year: "2015", title: "KCYM Unit Established", description: "The Anathadam unit of KCYM was officially formed with a handful of dedicated young members." },
-  { year: "2016", title: "First Annual Retreat", description: "Organized the first spiritual retreat, bringing together youth for prayer and reflection." },
-  { year: "2017", title: "Community Service Begins", description: "Launched outreach programs serving the local community with food drives and visits." },
-  { year: "2019", title: "Growing Membership", description: "Membership grew significantly, with active participation in diocesan-level events." },
-  { year: "2022", title: "Digital Transformation", description: "Embraced digital platforms for communication, event planning, and community building." },
-  { year: "2024", title: "New Initiatives", description: "Launched Blood Cell and Digital Magazine initiatives to serve a wider audience." },
+const storyParagraphs = [
+  "1978 മാനം CMS കോളേജിൽ വെച്ച് രൂപം കൊണ്ട് ക്രൈസ്തവസഭയുടെ ഒഫീഷ്യൽ യുവജന ധാർമ്മികസംഘടന കേരള കാത്തലിക് യൂത്ത് മൂവ്മെന്റ് അഥവാ KCYM. 1998-ൽ ആനത്തടം സെന്റ് തോമസ് ദേവാലയത്തിലും ഔദ്യോഗികമായി KCYM സംഘടന രൂപം കൊണ്ടു. നാളിതുവരെ ഇടവകയിലെ യുവതീ യുവാക്കളെ ആത്മീയമായും കൂട്ടായ്മയിലും സ്നേഹത്തിലും ഇടവകയുടെ വിവിധ പ്രവർത്തനങ്ങളിലും ചേർത്തു നിർത്താൻ KCYM സംഘടന ശക്തമായ പങ്കുവഹിച്ചു. ആത്മീയ പ്രവർത്തനങ്ങൾ, സാമൂഹിക പ്രതിബദ്ധതയുള്ള പ്രവർത്തനങ്ങൾ, കലാപരവും കായികപരവുമായ അഭിവൃദ്ധിയെ ലക്ഷ്യമിട്ട് നടത്തുന്ന വിവിധ മത്സരങ്ങൾ എന്ന് തുടങ്ങി അന്നം ഇന്നും സഭയുടേയും ആനത്തടം ഇടവകയുടേയും കരുത്തും കാവലാളുമായി തീർന്ന ഒരുകൂട്ടം ചെറുപ്പക്കാരുടെ, ചങ്കുറപ്പിന്റെ, കൂട്ടായ്മയുടെ കഥ പറയുന്ന പ്രസ്ഥാനം KCYM ANATHADAM.",
 ];
-
-const members = [
-  { name: "John Thomas", role: "President", initials: "JT" },
-  { name: "Mary Joseph", role: "Vice President", initials: "MJ" },
-  { name: "Abin Mathew", role: "Secretary", initials: "AM" },
-  { name: "Sneha George", role: "Joint Secretary", initials: "SG" },
-  { name: "Kevin Paul", role: "Treasurer", initials: "KP" },
-  { name: "Anna Kurian", role: "PRO", initials: "AK" },
-];
-
-const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1, y: 0,
-    transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" as const },
-  }),
-};
 
 export default function StoryPage() {
   return (
@@ -48,70 +25,23 @@ export default function StoryPage() {
       </section>
 
       <section className="py-12 md:py-20">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <Tabs defaultValue="journey" className="w-full">
-            {/* <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto mb-10 h-12">
-              <TabsTrigger value="journey" className="font-heading text-base">
-                <BookOpen className="h-4 w-4 mr-2" />
-                Our Journey
-              </TabsTrigger>
-              <TabsTrigger value="members" className="font-heading text-base">
-                <Users className="h-4 w-4 mr-2" />
-                Our Members
-              </TabsTrigger>
-            </TabsList> */}
-
-            <TabsContent value="journey" className="mt-6">
-              <div className="max-w-3xl mx-auto relative">
-                <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary/20 -translate-x-1/2" />
-                {milestones.map((item, i) => (
-                  <motion.div
-                    key={item.year}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    variants={fadeInUp}
-                    custom={i}
-                    className={`relative flex items-start gap-6 mb-10 ${
-                      i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                    }`}
-                  >
-                    <div className="absolute left-4 md:left-1/2 w-4 h-4 bg-primary rounded-full -translate-x-1/2 mt-1 z-10 ring-4 ring-background" />
-                    <div className={`ml-12 md:ml-0 md:w-1/2 ${i % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"}`}>
-                      <span className="text-primary font-heading font-bold text-lg">{item.year}</span>
-                      <h3 className="font-heading text-xl font-semibold text-foreground mt-1">{item.title}</h3>
-                      <p className="font-body text-muted-foreground text-sm mt-2">{item.description}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </TabsContent>
-
-            <TabsContent value="members" className="mt-6">
-              <p className="font-body text-muted-foreground text-center mb-10">
-                The people who make KCYM Anathadam special
-              </p>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                {members.map((member, i) => (
-                  <motion.div
-                    key={member.name}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    variants={fadeInUp}
-                    custom={i}
-                    className="glass-card rounded-xl p-6 text-center hover:shadow-lg transition-shadow"
-                  >
-                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                      <span className="font-heading text-lg font-bold text-primary">{member.initials}</span>
-                    </div>
-                    <h3 className="font-heading font-semibold text-foreground">{member.name}</h3>
-                    <p className="font-body text-sm text-primary mt-1">{member.role}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </TabsContent>
-          </Tabs>
+        <div className="container mx-auto px-4 max-w-3xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center"
+          >
+            {/* <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
+              KCYM ആനത്തടം
+            </h2> */}
+            <div className="font-body text-muted-foreground text-lg md:text-xl leading-relaxed text-left space-y-6">
+              {storyParagraphs.map((para, i) => (
+                <p key={i} style={{lineHeight: '50px', color: 'black'}}>{para}</p>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
     </>

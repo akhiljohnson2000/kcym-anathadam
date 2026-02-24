@@ -1,7 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone } from "lucide-react";
+import { Mail, Instagram } from "lucide-react";
+
+const INSTAGRAM_URL = "https://www.instagram.com/kcym_anathadam/";
 
 export default function ContactPage() {
   return (
@@ -29,40 +31,25 @@ export default function ContactPage() {
             transition={{ duration: 0.6 }}
             className="max-w-2xl mx-auto"
           >
-            <div className="space-y-8">
-              <div>
-                <h3 className="font-heading text-lg font-semibold text-foreground mb-3">Vicar</h3>
-                <div className="flex items-center gap-3">
-                  <Phone className="h-5 w-5 text-primary flex-shrink-0" />
-                  <p className="font-body text-muted-foreground">
-                    Fr. Varghese Arrikat — +91 94475 2xxxx
-                  </p>
+            <div className="relative mb-12 overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-card to-muted/50 p-8 md:p-10 text-center shadow-sm">
+              <div className="relative z-10">
+                <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
+                  <Instagram className="h-7 w-7 text-primary" />
                 </div>
-              </div>
-
-              <div>
-                <h3 className="font-heading text-lg font-semibold text-foreground mb-3">Church Officials</h3>
-                <div className="flex items-center gap-3">
-                  <Phone className="h-5 w-5 text-primary flex-shrink-0" />
-                  <p className="font-body text-muted-foreground">
-                    Willson Mangalan — +91 90615 1xxxx
-                  </p>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="font-heading text-lg font-semibold text-foreground mb-3">KCYM Officials</h3>
-                <div className="flex items-center gap-3">
-                  <Phone className="h-5 w-5 text-primary flex-shrink-0" />
-                  <p className="font-body text-muted-foreground">
-                    President — Noel — +91 97456 1xxxx
-                  </p>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="font-heading text-lg font-semibold text-foreground mb-3">Unit Officials</h3>
-                <p className="font-body text-muted-foreground">—</p>
+                <h2 className="font-heading text-xl font-semibold text-foreground mb-2">
+                  Reach us on Instagram
+                </h2>
+                <p className="font-body text-muted-foreground text-base md:text-lg max-w-md mx-auto mb-7 leading-relaxed">
+                  Send a message to our Instagram page. Our admin will get back to you soon.
+                </p>
+                <a
+                  href={INSTAGRAM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2.5 rounded-full bg-primary px-7 py-3.5 text-primary-foreground font-body font-semibold shadow-md hover:bg-primary/90 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+                >
+                  Open Instagram
+                </a>
               </div>
             </div>
 
