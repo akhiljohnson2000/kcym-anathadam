@@ -50,7 +50,7 @@ export default function StoryPage() {
       <section className="py-12 md:py-20">
         <div className="container mx-auto px-4 max-w-4xl">
           <Tabs defaultValue="journey" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto mb-10 h-12">
+            {/* <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto mb-10 h-12">
               <TabsTrigger value="journey" className="font-heading text-base">
                 <BookOpen className="h-4 w-4 mr-2" />
                 Our Journey
@@ -59,7 +59,7 @@ export default function StoryPage() {
                 <Users className="h-4 w-4 mr-2" />
                 Our Members
               </TabsTrigger>
-            </TabsList>
+            </TabsList> */}
 
             <TabsContent value="journey" className="mt-6">
               <div className="max-w-3xl mx-auto relative">
